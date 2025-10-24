@@ -2,16 +2,17 @@ import React, { useState } from "react";
 import "./UserSearchBar.css";
 import UserProfile from "./UserProfile";
 
+
 function UserSearchBar() {
-  const [user, setUser] = useState(""); 
-  const [searchUser, setSearchUser] = useState(""); 
+  const [user, setUser] = useState("");
+  const [searchUser, setSearchUser] = useState("");
 
   function handleClickChange(e) {
     e.preventDefault();
     if (user.trim() !== "") {
-      setSearchUser(user); 
+      setSearchUser(user);
     } else {
-      alert("Please enter a valid username!"); 
+      alert("Please enter a valid username!");
     }
   }
 
@@ -23,7 +24,7 @@ function UserSearchBar() {
           type="text"
           placeholder="Enter GitHub Username"
           value={user}
-          onChange={(e) => setUser(e.target.value)} 
+          onChange={(e) => setUser(e.target.value)}
         />
         <button className="btn" onClick={handleClickChange}>
           Search
@@ -35,5 +36,3 @@ function UserSearchBar() {
 }
 
 export default UserSearchBar;
-
-

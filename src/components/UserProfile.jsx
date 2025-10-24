@@ -1,5 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { PieChart, Pie, Tooltip, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend } from "recharts";
+
+import {
+  PieChart,
+  Pie,
+  BarChart,
+  Bar,
+  Cell,
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
+
+
 import "./UserProfile.css";
 
 function UserProfile({ username }) {
@@ -210,7 +227,7 @@ function UserProfile({ username }) {
             <Tooltip />
           </PieChart>
         </div>
-      
+
         <div className="d9">
           <h3>Most Popular Repositories</h3>
           <BarChart
@@ -226,18 +243,20 @@ function UserProfile({ username }) {
             <Legend />
             <Bar dataKey="stars">
               {popularRepos.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                <Cell
+                  key={`cell-${index}`}
+                  fill={COLORS[index % COLORS.length]}
+                />
               ))}
             </Bar>
           </BarChart>
         </div>
-    
-
       </div>
-
-      
     </div>
   );
 }
 
 export default UserProfile;
+
+
+
